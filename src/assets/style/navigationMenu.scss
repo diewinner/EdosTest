@@ -1,0 +1,129 @@
+.item_text {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.padding_around {
+  padding: 12px;
+}
+
+.menu_container {
+  min-width: 274px;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #2F3144;
+}
+
+.menu_logo {
+  display: inline-flex;
+  padding: 19px 41px 19px 41px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.menu_logo_nav_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.menu_navigation_container {
+  margin-left: 12px;
+  margin-right: 12px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.menu_navigation_item {
+  @extend .item_text;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: #F4F4F4;
+  }
+}
+
+
+.menu_user_log_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 19px;
+}
+
+.menu_user_card {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__name {
+      @extend .item_text;
+    }
+
+    &__worker {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(47, 49, 68, 0.65);
+    }
+  }
+
+  &__avatar {
+    @extend .item_text;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #2B4EC5;
+    padding: 13px;
+  }
+}
+
+.menu_log_out {
+  @extend .item_text;
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  border-radius: 16px;
+
+  &:hover {
+    background-color: #F4F4F4;
+  }
+}
+
+.menu_choose_language {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  border: 1px solid #E0E0E0;
+
+  &__extra {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.menu_version {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(47, 49, 68, 0.65);
+}
