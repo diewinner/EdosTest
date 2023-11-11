@@ -2,6 +2,7 @@ import {createColumnHelper, flexRender, getCoreRowModel, useReactTable,} from '@
 import {mockItems} from '../global/mockItems'
 import {useState} from "react";
 import '../assets/style/customTable.scss'
+import {MockPagination} from "./mockPagination";
 
 function checkStatus(status) {
     if (status === 'Запланировано') {
@@ -19,8 +20,9 @@ const columnHelper = createColumnHelper()
 const columns = [
     columnHelper.accessor(row => row.date, {
         id: 'date',
-        cell: info => <div className={'custom_table_item__value__date'}>{info.getValue()}</div>,
+        cell: info => <span className={'custom_table_item__value__date'}>{info.getValue()}</span>,
         header: () => <span>Дата и время</span>,
+        footer: () => <div className={'custom_table_item__footer'}><MockPagination/></div>,
     }),
     columnHelper.accessor(row => row.status, {
         id: 'status',
@@ -57,11 +59,11 @@ export const CustomTable = () => {
     })
 
     return (
-        <div>
+        <div className={'table_container'}>
             <table>
-                <thead>
+                <thead className={'custom_table_item__gray'}>
                 {table.getHeaderGroups().map(headerGroup => (
-                    <tr key={headerGroup.id}>
+                    <tr key={headerGroup.id} >
                         {headerGroup.headers.map(header => (
                             <th key={header.id}>
                                 {header.isPlaceholder
@@ -77,7 +79,7 @@ export const CustomTable = () => {
                 </thead>
                 <tbody>
                 {table.getRowModel().rows.map(row => (
-                    <tr key={row.id} className={row.id % 2 === 0 ? 'custom_table_item__gray' : 'custom_table_item'}>
+                    <tr key={row.id} className={row.id % 2 === 1 ? 'custom_table_item__gray' : 'custom_table_item'}>
                         {row.getVisibleCells().map(cell => (
                             <td key={cell.id}>
                                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -86,6 +88,22 @@ export const CustomTable = () => {
                     </tr>
                 ))}
                 </tbody>
+                <tfoot>
+                {table.getFooterGroups().map(footerGroup => (
+                    <tr key={footerGroup.id} className={'custom_table_item__gray'}>
+                        {footerGroup.headers.map(header => (
+                            <th key={header.id}>
+                                {header.isPlaceholder
+                                    ? null
+                                    : flexRender(
+                                        header.column.columnDef.footer,
+                                        header.getContext()
+                                    )}
+                            </th>
+                        ))}
+                    </tr>
+                ))}
+                </tfoot>
             </table>
         </div>
     )

@@ -1,9 +1,17 @@
-table {
-  display: block;
-  border-collapse: collapse;
+.table_container {
   border: 1px solid #E8EAEC;
   border-radius: 12px;
+  overflow: hidden;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    td:first-child {
+      width: 100px;
+    }
+  }
 }
+
+
 
 thead {
   tr {
@@ -24,8 +32,9 @@ thead {
 
 
 .custom_table_item {
-  height: 64px;
+  height: 3.2vw;
   background-color: #fff;
+  border-collapse: collapse;
 
   &__value {
     padding: 10px 16px;
@@ -34,17 +43,16 @@ thead {
 
     &__date {
       @extend .custom_table_item__value;
-      width: 200px;
+      max-width: 205px;
     }
 
     &__name {
       @extend .custom_table_item__value;
-      min-width: 40%;
     }
 
     &__room {
       @extend .custom_table_item__value;
-      min-width: 15%;
+
     }
   }
 
@@ -52,7 +60,20 @@ thead {
     @extend .custom_table_item;
     background-color: #F4F4F4;
   }
+
+  &__footer {
+    @extend .custom_table_item;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    background: transparent;
+  }
 }
+
+
+
+
 
 .custom_table_status {
   font-size: 13px;
@@ -78,3 +99,33 @@ thead {
     background-color: #FFDAA1;
   }
 }
+
+
+//pagination
+.pagination_container {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2F3144;
+  border:1px solid transparent;
+  cursor: pointer;
+  &:hover {
+    border:1px solid #3761F3;
+    color:#3761F3;
+  }
+  &:nth-child(3) {
+    background-color: #E0E0E0;
+  }
+}
+

@@ -14,20 +14,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 65px;
+  &__title {
+    font-size: 24px;
+    font-weight: 800;
+    color:#2F3144;
+  }
+
   &__btns {
     display: flex;
     gap: 14px;
     &__input {
       position: relative;
-      max-height: 44px;
-      border-radius: 12px;
-      border: 1px solid #E0E0E0;
-      padding-left: 48px;
-      &::placeholder {
-        font-size: 13px;
-        font-weight: 500;
-        color: #2F3144;
+      &::before {
+        content: url("../img/svg/Search.svg");
+        position: absolute;
+        top: 25%;
+        left: 16px;
       }
+      input {
+        height: 100%;
+        border-radius: 12px;
+        border: 1px solid #E0E0E0;
+        padding-left: 48px;
+        &::placeholder {
+          font-size: 13px;
+          font-weight: 500;
+          color: #2F3144;
+        }
+      }
+
     }
     &__item {
       min-width: 44px;

@@ -12,8 +12,25 @@ body {
 .app {
   width: 100%;
   height: 100%;
+  position: relative;
+  &::before {
+    content: url("../img/svg/Icon.svg");
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    top: 31px;
+    left: 262px;
+    background-color: #2F3144;
+    border-radius: 48px;
+    width: 24px;
+    height: 24px;
+    margin-right: -5px;
+    z-index: 22;
+  }
   &__container {
-    @extend .app;
+    width: 100%;
+    height: 100%;
     background: #F4F4F8;
     display: flex;
     gap: 8px;
