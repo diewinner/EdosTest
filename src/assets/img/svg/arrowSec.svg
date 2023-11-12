@@ -1,0 +1,28 @@
+<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="17" height="17" fill="#1E1E1E"/>
+<g id="&#208;&#161;&#208;&#191;&#208;&#184;&#209;&#129;&#208;&#190;&#208;&#186; &#209;&#129;&#208;&#181;&#209;&#129;&#209;&#129;&#208;&#184;&#208;&#185;" clip-path="url(#clip0_0_1)">
+<rect width="1920" height="940" transform="translate(-265.75 -34.1714)" fill="#F4F4F8"/>
+<g id="body">
+<path d="M16.25 -14C16.25 -20.6274 21.6226 -26 28.25 -26H1634.25C1640.88 -26 1646.25 -20.6274 1646.25 -14V914H16.25V-14Z" fill="white"/>
+</g>
+<g id="menu">
+<rect width="274" height="940" transform="translate(-265.75 -33.3428)" fill="white"/>
+<g id="nav_header">
+<rect width="274" height="84" transform="translate(-265.75 -33.3428)" fill="white"/>
+<g id="tui-accordion-item">
+<rect x="-3.75" y="-3.34277" width="24" height="24" rx="12" fill="#2F3144"/>
+<g id="Left Side">
+<g id="Icon">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M10.7214 4.18583C10.9817 4.44618 10.9817 4.86829 10.7214 5.12864L7.19279 8.65724L10.7214 12.1858C10.9817 12.4462 10.9817 12.8683 10.7214 13.1286C10.461 13.389 10.0389 13.389 9.77858 13.1286L5.77858 9.12864C5.51823 8.86829 5.51823 8.44618 5.77858 8.18583L9.77858 4.18583C10.0389 3.92548 10.461 3.92548 10.7214 4.18583Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1920" height="940" fill="white" transform="translate(-265.75 -34.1714)"/>
+</clipPath>
+</defs>
+</svg>

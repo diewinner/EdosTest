@@ -1,51 +1,9 @@
-import {createColumnHelper, flexRender, getCoreRowModel, useReactTable,} from '@tanstack/react-table'
-import {mockItems} from '../global/mockItems'
 import {useState} from "react";
+import {flexRender, getCoreRowModel, useReactTable} from '@tanstack/react-table'
+import {mockItems} from '../global/mockItems'
+import {columns} from "../global/columnsForTable";
 import '../assets/style/customTable.scss'
-import {MockPagination} from "./mockPagination";
 
-function checkStatus(status) {
-    if (status === 'Запланировано') {
-        return 'custom_table_status__plan'
-    } else if (status === 'Идет') {
-        return 'custom_table_status__going'
-    } else if (status === 'Завершено') {
-        return 'custom_table_status__complete'
-    }
-
-}
-
-const columnHelper = createColumnHelper()
-
-const columns = [
-    columnHelper.accessor(row => row.date, {
-        id: 'date',
-        cell: info => <span className={'custom_table_item__value__date'}>{info.getValue()}</span>,
-        header: () => <span>Дата и время</span>,
-        footer: () => <div className={'custom_table_item__footer'}><MockPagination/></div>,
-    }),
-    columnHelper.accessor(row => row.status, {
-        id: 'status',
-        cell: info => <span className={checkStatus(info.getValue())}>{info.getValue()}</span>,
-        header: () => <span>Статус</span>,
-    }),
-    columnHelper.accessor('nameStudy', {
-        header: () => <span>Название учебного модуля</span>,
-        cell: info => <div className={'custom_table_item__value__name'}>{info.getValue()}</div>,
-    }),
-    columnHelper.accessor('typeSession', {
-        header: () => <span>Тип сессии</span>,
-        cell: info => <div className={'custom_table_item__value'}>{info.getValue()}</div>,
-    }),
-    columnHelper.accessor('room', {
-        header: () => <span>Комната</span>,
-        cell: info => <div className={'custom_table_item__value__room'}>{info.getValue()}</div>,
-    }),
-    columnHelper.accessor('group', {
-        header: () => <span>Группа</span>,
-        cell: info => <div className={'custom_table_item__value'}>{info.getValue()}</div>,
-    }),
-]
 
 export const CustomTable = () => {
 
@@ -61,9 +19,9 @@ export const CustomTable = () => {
     return (
         <div className={'table_container'}>
             <table>
-                <thead className={'custom_table_item__gray'}>
+                <thead className={'custom_table_item__gray sticky_header_table'}>
                 {table.getHeaderGroups().map(headerGroup => (
-                    <tr key={headerGroup.id} >
+                    <tr key={headerGroup.id}>
                         {headerGroup.headers.map(header => (
                             <th key={header.id}>
                                 {header.isPlaceholder
@@ -90,7 +48,7 @@ export const CustomTable = () => {
                 </tbody>
                 <tfoot>
                 {table.getFooterGroups().map(footerGroup => (
-                    <tr key={footerGroup.id} className={'custom_table_item__gray'}>
+                    <tr key={footerGroup.id} className={'custom_table_item__gray '}>
                         {footerGroup.headers.map(header => (
                             <th key={header.id}>
                                 {header.isPlaceholder

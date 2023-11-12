@@ -1,17 +1,17 @@
 import {FilterSvg} from "../assets/img/svg/Filter";
 import {SettingTableSvg} from "../assets/img/svg/SettingTable";
+import {CustomTable} from "./CustomTable";
 import '../assets/style/mainContent.scss'
-import {CustomTable} from "./table";
-export const MainContent = () => {
 
+export const MainContent = ({tab}) => {
 
     return (
         <div className={'main_container'}>
             <div className={'main_header'}>
-                <h4 className={'main_header__title'}>Учебные сессии</h4>
+                <h4 className={'main_header__title'}>{tab}</h4>
                 <div className={'main_header__btns'}>
                     <div className={'main_header__btns__input'}>
-                        <input  type={"text"} placeholder={'Поиск'}/>
+                        <input type={"text"} placeholder={'Поиск'}/>
                     </div>
 
                     <div className={'main_header__btns__item'}>

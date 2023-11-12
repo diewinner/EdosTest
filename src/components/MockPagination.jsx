@@ -1,6 +1,7 @@
 import {ArrowLeftSvg} from "../assets/img/svg/ArrowLeft";
 import {ArrowRightSvg} from "../assets/img/svg/ArrowRight";
 import '../assets/style/customTable.scss'
+
 export const MockPagination = () => {
     const data = [1, 2, 3, 4, '...', 25]
     return (

@@ -14,7 +14,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #2F3144;
 }
 
 .menu_logo {
@@ -39,6 +38,9 @@
   ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 }
 
@@ -52,6 +54,23 @@
 
   &:hover {
     background: #F4F4F4;
+  }
+}
+
+.menu_navigation_item_active {
+  @extend .item_text;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  background: #3761F3;
+  color: #fff;
+
+  svg {
+    path {
+      fill: #fff;
+    }
   }
 }
 

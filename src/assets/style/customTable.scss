@@ -1,8 +1,10 @@
+//root styles
 .table_container {
   border: 1px solid #E8EAEC;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: auto;
   table {
+    position: relative;
     width: 100%;
     border-collapse: collapse;
     td:first-child {
@@ -13,7 +15,9 @@
 
 
 
+
 thead {
+
   tr {
     th {
       padding-top: 16px;
@@ -24,15 +28,24 @@ thead {
         display: flex;
         font-size: 17px;
         font-weight: 800;
-        color: #2F3144;
       }
     }
   }
 }
 
+tfoot {
+  tr {
+    th {
+      position: relative;
+    }
+  }
+}
+
+
+//custom styles
 
 .custom_table_item {
-  height: 3.2vw;
+  height: 64px;
   background-color: #fff;
   border-collapse: collapse;
 
@@ -40,12 +53,14 @@ thead {
     padding: 10px 16px;
     font-size: 15px;
     font-weight: 500;
-
     &__date {
       @extend .custom_table_item__value;
-      max-width: 205px;
+      min-width: 175px;
     }
-
+    &__group {
+      @extend .custom_table_item__value;
+      min-width: 11vw;
+    }
     &__name {
       @extend .custom_table_item__value;
     }
@@ -68,17 +83,16 @@ thead {
     align-items: center;
     padding-left: 16px;
     background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
-
-
-
 
 
 .custom_table_status {
   font-size: 13px;
   font-weight: 500;
-  color: #2F3144;
   padding: 4px 12px;
   border-radius: 43px;
 
@@ -105,6 +119,7 @@ thead {
 .pagination_container {
   display: flex;
   gap: 8px;
+  z-index: 777;
 }
 
 .pagination_item {
@@ -117,15 +132,25 @@ thead {
   background-color: #fff;
   font-size: 15px;
   font-weight: 500;
-  color: #2F3144;
   border:1px solid transparent;
   cursor: pointer;
   &:hover {
     border:1px solid #3761F3;
     color:#3761F3;
+    & svg {
+      path {
+        fill: #3761F3;
+      }
+    }
   }
   &:nth-child(3) {
     background-color: #E0E0E0;
   }
+}
+
+.sticky_header_table {
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
