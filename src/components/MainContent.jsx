@@ -20,7 +20,7 @@ export const MainContent = ({tab}) => {
                     <div className={'main_header__btns__item'}>
                         <SettingTableSvg/>
                     </div>
-                    <a href={'#'} className={'main_header__btns__create'} >
+                    <a href={'/#'} className={'main_header__btns__create'} >
                         Создать
                     </a>
                 </div>
