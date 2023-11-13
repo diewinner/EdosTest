@@ -1,5 +1,6 @@
 import {createColumnHelper} from "@tanstack/react-table";
 import {MockPagination} from "../components/MockPagination";
+import ArrowDown from "../assets/img/svg/ArrowDown";
 
 const columnHelper = createColumnHelper()
 
@@ -17,7 +18,11 @@ export const columns = [
     columnHelper.accessor(row => row.date, {
         id: 'date',
         cell: info => <div className={'custom_table_item__value__date'}>{info.getValue()}</div>,
-        header: () => <span>Дата и время</span>,
+        header: () =>
+            <div className={'custom_table_header_filter'}>
+                <span>Дата и время</span>
+                <ArrowDown/>
+            </div>,
         footer: () => <div className={'custom_table_item__footer'}><MockPagination/></div>,
     }),
     columnHelper.accessor(row => row.status, {

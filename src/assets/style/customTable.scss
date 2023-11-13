@@ -154,3 +154,8 @@ tfoot {
   z-index: 999;
 }
 
+.custom_table_header_filter {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
